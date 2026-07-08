@@ -1,6 +1,7 @@
 function Experience(){
     return(
-<div className="w-full border border-gray-700 rounded-2xl p-6">
+        
+<div id="experience" className="w-full border border-gray-700 rounded-2xl p-6">
     <h2 className="text-xl font-bold mb-4">💼 Experience</h2>
     <h1 className="text-blue-700 font-bold">Software Intern  ~  🗓️Dec 2025 - Mar 2026</h1>
     <h1>Hackgenix Private Limited</h1>
@@ -19,6 +20,7 @@ function Experience(){
         <li>Improved UI responsiveness across devices.</li>
     </ul>
 </div>
+ 
     );
 }
 export default Experience;

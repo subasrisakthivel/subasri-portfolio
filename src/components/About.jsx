@@ -9,7 +9,10 @@ import {
 
 function About(){
     return(
-        <section className="bg-slate-900 text-white px-10 py-5 border border-gray-800">
+        <section 
+ id="about" 
+ className="bg-white text-black dark:bg-slate-900 dark:text-white"
+>
             <div className="flex justify-between gap-10">
                 <div className=" border border-gray-800 rounded-2xl">
                     <img src={about} alt="About" 

@@ -1,7 +1,4 @@
 import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
 import Navbar from './components/Navbar'
 import './App.css'
 import Hero from './components/Hero'
@@ -13,11 +10,13 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  
+  const [darkMode,setDarkMode] = useState(true);
 
   return (
-    <>
-      <Navbar />
+    <div className={darkMode ? "dark" :""}>
+      <Navbar 
+      darkMode={darkMode}
+      setDarkMode={setDarkMode}/>
       <Hero/>
       <About/>
       <Skills/>
@@ -25,7 +24,7 @@ function App() {
       <Qualifications/>
       <Contact/>
       <Footer/>
-    </>
+    </div>
   )
 }
 

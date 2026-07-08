@@ -4,9 +4,13 @@ import { TbView360 } from "react-icons/tb";
 import { RiSendPlaneFill } from "react-icons/ri";
 import profile from "../assets/profile.png";
 
+const downloadResume = ()=>{
+  window.open("./Subasri_Resume.pdf");
+}
+
 function Hero() {
   return (
-    <section className="bg-slate-900 px-10 py-16 text-white ">
+    <section className="bg-white text-black dark:bg-slate-900 dark:text-white px-10 py-8 border border-gray-800">
       <div className="flex item-center justify-between">
         <div>
           <p className="w-25 h-7 rounded-2xl bg-blue-950 "> 👋Hello, I'm </p>
@@ -22,7 +26,8 @@ function Hero() {
             React.js,Javascript, TailwindCSS and Node.js.
           </p>
 
-          <button className="px-5 py-2 border rounded-2xl bg-purple-700 hover:bg-blue-700 ">
+          <button onClick={downloadResume}
+          className="px-5 py-2 border rounded-2xl bg-purple-700 hover:bg-blue-700 ">
             <FaDownload />Download Resume
           </button>
           <button className="px-5 py-2 border rounded-2xl border-blue-800 hover:bg-blue-700">
@@ -65,3 +70,25 @@ function Hero() {
   );
 }
 export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

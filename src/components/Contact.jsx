@@ -8,7 +8,7 @@ import {
 
 function Contact() {
   return (
-    <section className="bg-slate-900 text-white px-16 py-14 border-t border-gray-800">
+    <section id="contact" className="bg-white text-black dark:bg-slate-900 dark:text-white px-10 py-8 border border-gray-800">
 
       <h1 className="text-4xl font-bold text-center">
         Contact <span className="text-blue-500">Me</span>
