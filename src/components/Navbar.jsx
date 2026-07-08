@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { FaMoon,FaSun } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 
+function Navbar({ darkMode, setDarkMode }) {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-
-function Navbar({darkMode,setDarkMode}) {
-  
   const downloadResume = () => {
     window.open("/Subasri_Resume.pdf");
   };
@@ -45,11 +44,10 @@ function Navbar({darkMode,setDarkMode}) {
   ];
 
   return (
-   
     <header className="bg-white text-black dark:bg-slate-950 dark:text-white">
       <div className="flex item-center justify-between py-4 mx-auto">
         <h1 className="text-2xl font-bold">Subasri.</h1>
-        <nav>
+        <nav className="hidden md:block">
           <ul className="flex gap-8">
             {navLinks.map((link) => (
               <li>
@@ -59,11 +57,19 @@ function Navbar({darkMode,setDarkMode}) {
           </ul>
         </nav>
         <div className="flex items-center gap-4">
+            <button
+            className="md:hidden text-2xl"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
           <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="w-10 h-10 rounded-full bg-slate-800 flex item-center justify-center">
+            onClick={() => setDarkMode(!darkMode)}
+            className="w-10 h-10 rounded-full bg-slate-800 flex item-center justify-center"
+          >
             {darkMode ? <FaSun /> : <FaMoon />}
           </button>
+        
           <button
             onClick={downloadResume}
             className="px-5 py-2 border rounded-2xl bg-purple-700 hover:bg-blue-700"
@@ -72,8 +78,31 @@ function Navbar({darkMode,setDarkMode}) {
           </button>
         </div>
       </div>
+      {
+    menuOpen && (
+      <div className="md:hidden mt-5">
+
+        <ul className="flex flex-col gap-5">
+
+          {
+            navLinks.map((link)=>(
+              <li key={link.name}>
+                <a
+                  href={link.path}
+                  onClick={()=>setMenuOpen(false)}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+
+        </ul>
+
+      </div>
+    )
+  }
     </header>
-   
   );
 }
 export default Navbar;
